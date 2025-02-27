@@ -7,7 +7,8 @@ export const generateToken = async ( res, user, message) =>{
     .status(200)
     .cookie("app_token", token, {
         httpOnly : true,
-        sameSite : "strict",
+        secure: true,    // Ensures cookies are only sent over HTTPS
+        sameSite: "None",
         maxAge : 24 * 60 * 60 * 1000 // 1 day
     }).json({
         success : true,
