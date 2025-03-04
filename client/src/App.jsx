@@ -3,7 +3,7 @@ import './App.css'
 import Login from './pages/Login'
 import Navbar from './components/Navbar'
 import HeroSection from './pages/learner/HeroSection'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, useLocation } from 'react-router-dom'
 import MainLayout from './layout/MainLayout'
 import Courses from './pages/learner/Courses'
 import MyLearning from './pages/learner/MyLearning'
@@ -22,9 +22,11 @@ import SearchPage from './pages/learner/SearchPage'
 import { AdminRoute, AuthenticatedUser, ProtectedRoute } from './components/ProtectedRoutes'
 import PurchasedCourseProtection from './components/PurchasedCourseProtection'
 import { ThemeProvider } from './components/ThemeProvider'
-
+import axios from 'axios'
+import Chatbot from './components/Chatbot'
 function App() {
 
+    // const location = useLocation();
     const appRouter = createBrowserRouter([
         {
             path: "/",
@@ -45,7 +47,7 @@ function App() {
                 },
                 {
                     path: "my-learning",
-                    element: <ProtectedRoute><MyLearning  /></ProtectedRoute>,
+                    element: <ProtectedRoute><MyLearning /></ProtectedRoute>,
                 },
                 {
                     path: "profile",
@@ -108,15 +110,34 @@ function App() {
 
     ])
     console.log('API URL:', import.meta.env.VITE_BACKEND_URL);
+    async function generateAnswer() {
+        console.log('loading...')
+        const response = await axios({
+            url: "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyDE4ka-m01Wwj7uBUIe_XxmcvrBpFVOPLs",
+            method: "POST",
+            data: {
+                "contents": [{
+                    "parts": [{ "text": "Hy" }]
+                }]
+            }
+        })
+        console.log(response['data']['candidates'][0]['content']['parts'][0].text);
 
+    }
 
     return (
-        <main>
-            <ThemeProvider>
+        <>
+            <main>
+                <ThemeProvider>
 
-                <RouterProvider router={appRouter} />
-            </ThemeProvider>
-        </main>
+                    <RouterProvider router={appRouter} />
+                    <Chatbot />
+                </ThemeProvider>
+            </main>
+            {/* <footer>
+                {location.pathname !== "/login" && <Chatbot />}
+            </footer> */}
+        </>
     )
 }
 

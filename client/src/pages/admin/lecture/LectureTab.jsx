@@ -11,7 +11,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { toast } from 'sonner'
 
-const MEDIA_URL = `${import.meta.env.VITE_BACKEND_URL}/media/`
+const MEDIA_URL = `${import.meta.env.VITE_BACKEND_URL}media`
 const LectureTab = () => {
     // const isLoading = false;
     // const removeLoading = false;

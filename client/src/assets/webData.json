@@ -1,0 +1,75 @@
+{
+    "bot_name": "AiTutor",
+    "creator": "Shivam Jayswal",
+    "platform_name": "Tutor Flow",
+    "description": "Tutor Flow is an online employee training platform that allows companies to upload, manage, and provide tutorial videos for employee skill development and training.",
+    "user_roles": {
+      "Admin": {
+        "role_description": "Company HR / Training Manager",
+        "responsibilities": [
+          "Upload and manage training videos.",
+          "Assign courses to employees.",
+          "Monitor progress through dashboards.",
+          "Manage user access and permissions."
+        ]
+      },
+      "Employee": {
+        "role_description": "Learner",
+        "responsibilities": [
+          "View assigned training videos.",
+          "Track progress in courses.",
+          "Take quizzes (if enabled).",
+          "Earn certifications (if applicable)."
+        ]
+      }
+    },
+    "features": {
+      "Course Management": [
+        "Upload Videos – Companies can upload tutorial videos in various formats.",
+        "Organize Courses – Group videos into structured courses for better learning.",
+        "Add Resources – Attach PDFs, presentations, or additional reading material.",
+        "Set Completion Criteria – Define if employees must watch the full video or take a quiz."
+      ],
+      "User Management": [
+        "Employee Registration – Employees are assigned accounts by admins.",
+        "Role-Based Access – Admins can control access to courses.",
+        "Bulk User Import – Upload employee details via CSV to enroll them quickly."
+      ],
+      "Learning Experience": [
+        "Video Player with Resume Feature – Employees can pause and continue where they left off.",
+        "Progress Tracking – Dashboard showing % completion of courses.",
+        "Quizzes & Assessments – Optional quizzes at the end of courses.",
+        "Certificates & Badges – Generate completion certificates for employees."
+      ],
+      "Reporting & Analytics": [
+        "Completion Reports – View employee progress in real time.",
+        "Engagement Metrics – Track how long employees spend on videos.",
+        "Export Reports – Download CSV reports for HR review."
+      ],
+      "Security & Integrations": [
+        "Single Sign-On (SSO) – Seamless login with company credentials.",
+        "Mobile-Friendly Design – Accessible on desktops, tablets, and smartphones.",
+        "Data Security – Role-based access, encrypted videos, and compliance with industry standards."
+      ]
+    },
+    "common_queries": {
+      "Admin Queries": {
+        "How do I upload a new training video?": "Go to the 'Admin Dashboard' → Click 'Upload Course' → Select Video File → Set Course Details → Save.",
+        "Can I assign a course to a specific department?": "Yes, go to 'User Management' → Select Employees → Assign Course.",
+        "Where can I view employee progress?": "Navigate to 'Reports & Analytics' in the dashboard."
+      },
+      "Employee Queries": {
+        "How do I access my assigned training videos?": "Log in → Click 'My Courses' → Select a Course → Click Play.",
+        "Can I resume a video where I left off?": "Yes, the platform saves progress automatically.",
+        "How do I get my course completion certificate?": "Once a course is 100% complete, go to 'My Certificates' to download."
+      }
+    },
+    "technical_specifications": {
+      "Platform Type": "Web-based LMS",
+      "Supported Formats": ["MP4", "PDF", "PPT", "DOCX"],
+      "User Authentication": ["Email Login", "SSO"],
+      "Hosting": "Deployed on Vercel",
+      "Mobile Support": "Fully responsive"
+    }
+  }
+  
